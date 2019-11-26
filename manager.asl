@@ -16,6 +16,24 @@ child("agent7", "agent14").
 child("agent7", "agent15").
 
 
+/*
+parent("agent2", "agent1").
+parent("agent3", "agent1").
+
+parent("agent4", "agent2").
+parent("agent5", "agent2").
+parent("agent6", "agent3").
+parent("agent7", "agent3").
+
+parent("agent8", "agent4").
+parent("agent9", "agent4").
+parent("agent10", "agent5").
+parent("agent11", "agent5").
+parent("agent12", "agent6").
+parent("agent13", "agent6").
+parent("agent14", "agent7").
+parent("agent15", "agent7").
+*/
 
 !start.
 !get_values.
