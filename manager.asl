@@ -17,11 +17,8 @@ parent("agent15", "agent7").
 
 
 !start.
-!shake.
 
 +!start <-
-		.send(agent15, tell, set_val);
-		.send(agent15, tell, remove_num);
 		.send(agent1, tell, root);
 		for(.range(I, 2, 15)){
 			.concat(agent, I, N);
@@ -38,13 +35,19 @@ parent("agent15", "agent7").
 		};
 		.broadcast(tell, set_val);
 		.wait(100);
-		.broadcast(tell, get_val).
+		.broadcast(achieve, get_val);
+		!shake.
 		
-+!shake <- .wait(100);  .broadcast(tell, bubble); .wait(100); 
-						.broadcast(tell, update); .wait(100); 
-						.print("asdfadsf");
-						.broadcast(tell, get_val). // for ..8
-
++!shake <- .wait(100);  .send(agent1, achieve, tree_shake). // .wait(1000);
+						//.broadcast(tell, bubble); .wait(200); 
+						//.broadcast(tell, update); .wait(100).
+						//.print("###########################");
+						//.broadcast(tell, bubble); .wait(100);
+						//.broadcast(achieve, get_val).
+						//.print("");
++!bubble.
++!update.
++!get_val.
 //+make_sort: 
 
 
