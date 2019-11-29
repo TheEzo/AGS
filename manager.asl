@@ -15,7 +15,6 @@ parent("agent13", "agent6").
 parent("agent14", "agent7").
 parent("agent15", "agent7").
 
-
 !start.
 
 +!start <-
@@ -38,16 +37,17 @@ parent("agent15", "agent7").
 		.broadcast(achieve, get_val);
 		!shake.
 		
-+!shake <- .wait(100);  .send(agent1, achieve, tree_shake). // .wait(1000);
-						//.broadcast(tell, bubble); .wait(200); 
-						//.broadcast(tell, update); .wait(100).
-						//.print("###########################");
-						//.broadcast(tell, bubble); .wait(100);
-						//.broadcast(achieve, get_val).
-						//.print("");
++!shake <-  .wait(100);  
+			.send(agent1, achieve, tree_shake);
+			.print("###########################");
+			for(.range(I, 1, 8)){
+				.wait(500);
+				.send(agent1, achieve, remove_num);
+				.wait(100);
+				.send(agent1, achieve, get_val);
+			}.
+			
 +!bubble.
 +!update.
 +!get_val.
-//+make_sort: 
-
 
